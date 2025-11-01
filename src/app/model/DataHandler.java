@@ -1,13 +1,16 @@
-package app;
+package app.model;
+
+import app.dao.DataRepository;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static app.view.ContentView.printData;
 
 public class DataHandler {
 
     String[] fruits = new DataRepository().getData();
 
     public void getOutput() {
-        // критичний блок коду
         synchronized (this) {
             StringBuilder sb = new StringBuilder();
             AtomicInteger count = new AtomicInteger(1);
@@ -15,7 +18,7 @@ public class DataHandler {
                 sb.append(String.format("(%d) %s ",
                         count.getAndAdd(1), fruit));
             }
-            System.out.println(Thread.currentThread().getName() + ": " + sb);
+            printData(sb.toString());
         }
     }
 }

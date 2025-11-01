@@ -1,6 +1,7 @@
-package app;
+package app.model;
 
-class MyThread extends  Thread{
+
+public class MyThread extends Thread {
 
     DataHandler dataHandler;
 

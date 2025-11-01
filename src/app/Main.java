@@ -1,5 +1,8 @@
 package app;
 
+import app.model.DataHandler;
+import app.model.MyThread;
+
 public class Main {
 
     public static void main(String[] args) {
