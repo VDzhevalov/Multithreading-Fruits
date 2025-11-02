@@ -1,11 +1,11 @@
 package app.model;
 
 
-public class MyThread extends Thread {
+public class MyThread<T extends DataHandler> extends Thread {
 
-    DataHandler dataHandler;
+    T dataHandler;
 
-    public MyThread(String name, DataHandler dataHandler) {
+    public MyThread(String name, T dataHandler) {
         super(name);
         this.dataHandler = dataHandler;
     }
