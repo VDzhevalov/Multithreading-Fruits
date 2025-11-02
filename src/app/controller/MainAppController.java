@@ -8,6 +8,7 @@ import static app.utils.ThreadStarter.*;
 import static app.view.AppModeView.getAppMode;
 
 public class MainAppController {
+    private static final int AMOUNT_OF_THREADS = 6;
 
     public static void start() {
         switch (getAppMode()) {
@@ -23,37 +24,37 @@ public class MainAppController {
 
     private static void raceCondition() {
         DataHandlerRaceCondition dataHandler = new DataHandlerRaceCondition();
-        startThreads(dataHandler, 6);
+        startThreads(dataHandler, AMOUNT_OF_THREADS);
     }
 
     private static void atomicCounter() {
         DataHandlerAtomicCounter dataHandler = new DataHandlerAtomicCounter();
-        startThreads(dataHandler, 6);
+        startThreads(dataHandler, AMOUNT_OF_THREADS);
     }
 
     private static void synchronize() {
         DataHandlerSynchronized dataHandler = new DataHandlerSynchronized();
-        startThreads(dataHandler, 6);
+        startThreads(dataHandler, AMOUNT_OF_THREADS);
     }
 
     private static void cyclicBarrier() {
         DataHandlerSynchronized dataHandler = new DataHandlerSynchronized();
-        startCyclicBarrier(dataHandler, 6);
+        startCyclicBarrier(dataHandler, AMOUNT_OF_THREADS);
     }
 
     public static void latchChain() {
         DataHandlerRaceCondition dataHandler = new DataHandlerRaceCondition();
-        startLatchChain(dataHandler, 6);
+        startLatchChain(dataHandler, AMOUNT_OF_THREADS);
     }
 
     public static void turnBasedOrder() {
         DataHandlerRaceCondition dataHandler = new DataHandlerRaceCondition();
-        startTurnBasedOrder(dataHandler, 6);
+        startTurnBasedOrder(dataHandler, AMOUNT_OF_THREADS);
     }
 
     public static void barrierThenOrdered() {
         DataHandlerRaceCondition dataHandler = new DataHandlerRaceCondition();
-        startBarrierThenOrdered(dataHandler, 6);
+        startBarrierThenOrdered(dataHandler, AMOUNT_OF_THREADS);
     }
 
 }
