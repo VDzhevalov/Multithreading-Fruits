@@ -1,0 +1,12 @@
+package app.enums;
+
+public enum AppMode {
+
+    RACE_CONDITION,
+    ATOMIC_RACE_CONDITION,
+    SYNCHRONIZED,
+    CYCLIC_BARRIER,
+    LATCH_CHAIN,
+    TURN_BASED_ORDER,
+    BARRIER_THEN_ORDERED
+}
